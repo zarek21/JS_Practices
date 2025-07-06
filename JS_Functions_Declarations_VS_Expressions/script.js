@@ -43,3 +43,5 @@ const country5 = percentageOfWolrd2('Spain', 50000000);
 console.log(country5);
 const country6 = percentageOfWolrd2('Germany', 100000000);
 console.log(country6);
+
+// 7
