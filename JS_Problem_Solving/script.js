@@ -111,3 +111,8 @@ const printForecast = function (arr) {
 
 console.log(printForecast(temp1));
 console.log(printForecast(temp2));
+
+// Function which recives daily-work hours for a certain week,
+// and returns
+
+// 1) total hours worked
