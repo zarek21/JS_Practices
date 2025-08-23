@@ -124,43 +124,44 @@
 // TEST DATA: [7.5,8,6.5,0,8.5,4,0]
 
 const weekHours = [7.5, 8, 6.5, 0, 8.5, 4, 0];
-const workDay = [];
 
 const printWorkHours = function (array) {
-  // 1 ) return total hours worked
+  // 1) Total hours worked
   let totalHours = 0;
   for (let i = 0; i < array.length; i++) {
-    totalHours = totalHours + array[i];
+    totalHours += array[i];
   }
 
-  // 2) Average Daily Hours
+  // 2) Average daily hours
   const averageHours = totalHours / array.length;
 
   // 3) Day with the most hours worked
   let mostHoursDay = array[0];
-  const dayLabel = array.length;
+  let dayLabel = 0; // índice del día con más horas
   for (let i = 0; i < array.length; i++) {
     if (array[i] > mostHoursDay) {
       mostHoursDay = array[i];
-      const dayLabel = array.indexOf(mostHoursDay);
+      dayLabel = i; // actualizar índice
     }
   }
 
-  let workedDays = array[0];
   // 4) Number of days worked
+  let workedDays = 0;
   for (let i = 0; i < array.length; i++) {
-    if (array[i] > 0) {
-      workedDays = array[i];
-      workDay.push(array[i]);
-      console.log(workDay);
-    }
+    if (array[i] > 0) workedDays++;
   }
 
-  // RETURN VALUES
-  return `Total Hours Worked: ${totalHours} hrs 
-Average daily hours: ${averageHours}
-The day with the most hours worked was the ${dayLabel} day - of the week with ${mostHoursDay} hrs
-Worked Days: ${workedDays}`;
+  // 5) Full-time or more
+  const fullTime = totalHours >= 40 ? "Yes, full-time or more" : "No";
+
+  // RETURN
+  return `Total Hours Worked: ${totalHours} hrs
+Average Daily Hours: ${averageHours.toFixed(2)} hrs
+The day with the most hours worked was day ${
+    dayLabel + 1
+  } with ${mostHoursDay} hrs
+Worked Days: ${workedDays}
+Full-time or more? ${fullTime}`;
 };
 
 console.log(printWorkHours(weekHours));
