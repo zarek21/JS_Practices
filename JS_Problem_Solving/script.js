@@ -119,3 +119,6 @@ console.log(printForecast(temp2));
 // 2) Average daily hours
 // 3) The day with the most hours worked
 // 4) Number of days worked
+// 5) Wheter the week was full-time or more
+
+// TEST DATA: [7.5,8,6.5,0,8.5,4,0]
