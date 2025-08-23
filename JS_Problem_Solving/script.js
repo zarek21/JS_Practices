@@ -99,18 +99,18 @@
 // - Strings needs to contain day (index + 1)
 // - Add ... between elements at start and end of string
 
-const temp1 = [17, 21, 23];
-const temp2 = [12, 5, -5, 0, 4];
+// const temp1 = [17, 21, 23];
+// const temp2 = [12, 5, -5, 0, 4];
 
-const printForecast = function (arr) {
-  for (let i = 0; i < arr.length; i++) {
-    const dayLabel = i + 1 === 1 ? "day" : "days";
-    console.log(`... ${arr[i]}°C in ${i + 1} ${dayLabel} `);
-  }
-};
+// const printForecast = function (arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     const dayLabel = i + 1 === 1 ? "day" : "days";
+//     console.log(`... ${arr[i]}°C in ${i + 1} ${dayLabel} `);
+//   }
+// };
 
-console.log(printForecast(temp1));
-console.log(printForecast(temp2));
+// console.log(printForecast(temp1));
+// console.log(printForecast(temp2));
 
 // Function which recives daily-work hours for a certain week,
 // and returns
@@ -122,3 +122,45 @@ console.log(printForecast(temp2));
 // 5) Wheter the week was full-time or more
 
 // TEST DATA: [7.5,8,6.5,0,8.5,4,0]
+
+const weekHours = [7.5, 8, 6.5, 0, 8.5, 4, 0];
+const workDay = [];
+
+const printWorkHours = function (array) {
+  // 1 ) return total hours worked
+  let totalHours = 0;
+  for (let i = 0; i < array.length; i++) {
+    totalHours = totalHours + array[i];
+  }
+
+  // 2) Average Daily Hours
+  const averageHours = totalHours / array.length;
+
+  // 3) Day with the most hours worked
+  let mostHoursDay = array[0];
+  const dayLabel = array.length;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > mostHoursDay) {
+      mostHoursDay = array[i];
+      const dayLabel = array.indexOf(mostHoursDay);
+    }
+  }
+
+  let workedDays = array[0];
+  // 4) Number of days worked
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+      workedDays = array[i];
+      workDay.push(array[i]);
+      console.log(workDay);
+    }
+  }
+
+  // RETURN VALUES
+  return `Total Hours Worked: ${totalHours} hrs 
+Average daily hours: ${averageHours}
+The day with the most hours worked was the ${dayLabel} day - of the week with ${mostHoursDay} hrs
+Worked Days: ${workedDays}`;
+};
+
+console.log(printWorkHours(weekHours));
