@@ -116,3 +116,6 @@ console.log(printForecast(temp2));
 // and returns
 
 // 1) total hours worked
+// 2) Average daily hours
+// 3) The day with the most hours worked
+// 4) Number of days worked
