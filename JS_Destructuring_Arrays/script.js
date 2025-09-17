@@ -299,7 +299,7 @@ const ratings = [
 // const [[], [, ratingCount]] = ratings;
 // console.log(ratingCount);
 const [[, rating], [, ratingCount]] = ratings;
-console.log(rating, ratingCount);
+// console.log(rating, ratingCount);
 
 // 1.4 (Below is the ratingStars array. Destructure it into three
 // variables called fiveStarRatings, oneStarRatings
@@ -308,4 +308,4 @@ console.log(rating, ratingCount);
 const ratingStars = [63405, 1808];
 
 const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars;
-console.log(fiveStarRatings, oneStarRatings, threeStarRatings);
+// console.log(fiveStarRatings, oneStarRatings, threeStarRatings);
