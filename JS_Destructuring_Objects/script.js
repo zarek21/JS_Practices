@@ -67,3 +67,59 @@ const {
   fri: { open, close },
 } = openingHours;
 console.log(open, close);
+
+const ventanaModal = {
+  titulo: [],
+  mensaje: [],
+  textoBoton: [],
+  mostrarModal: function ({
+    titulo,
+    mensaje,
+    textoBoton,
+    mostrarIcono = false,
+    autoCerrar = false,
+  }) {
+    console.log(titulo, mensaje, textoBoton, mostrarIcono, autoCerrar);
+  },
+};
+
+ventanaModal.mostrarModal({
+  titulo: "VENTANA MODAL",
+  mensaje: "HOLA, SOY YO",
+  textoBoton: "HAZME CLICK",
+});
+
+// La función es independiente, no necesita estar dentro de un objeto.
+function mostrarModal({
+  titulo,
+  mensaje,
+  textoBoton = "Aceptar", // <-- 1. Aquí está el valor por defecto que faltaba
+  mostrarIcono = false,
+  autoCerrar = false,
+}) {
+  // 2. Usamos un `console.log` con formato para que la salida sea más clara
+  console.log("Mostrando modal con la siguiente configuración:");
+  console.log(`- Título: ${titulo}`);
+  console.log(`- Mensaje: ${mensaje}`);
+  console.log(`- Botón: ${textoBoton}`);
+  console.log(`- Mostrar Ícono: ${mostrarIcono}`);
+  console.log(`- Auto Cerrar: ${autoCerrar}`);
+}
+
+// --- Casos de Prueba ---
+
+// 1. Llamada con todas las opciones personalizadas
+console.log("--- Caso 1 ---");
+mostrarModal({
+  titulo: "Confirmación Requerida",
+  mensaje: "¿Estás seguro de que quieres eliminar este elemento?",
+  textoBoton: "Sí, eliminar",
+  mostrarIcono: true,
+});
+
+// 2. Llamada con solo lo indispensable (ahora sí usará los valores por defecto)
+console.log("\n--- Caso 2 ---");
+mostrarModal({
+  titulo: "Éxito",
+  mensaje: "La operación se completó correctamente.",
+});
