@@ -307,4 +307,5 @@ for (let i = 0; i < books.length; i++) {
   books[i].onlineContent && console.log(`${books[i].title}`);
 }
 
+console.log(1 && true && undefined);
 // END

@@ -33,3 +33,11 @@ const zarek = {
 };
 zarek.greet();
 zarek.calcAge();
+
+// Arguments keyword
+const addExpr = function (a, b, c, d) {
+  console.log(arguments);
+  return a + b + c + d;
+};
+addExpr(2, 5);
+addExpr(2, 5, 8, 12);

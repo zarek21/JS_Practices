@@ -286,7 +286,7 @@ const books = [
     ISBN: "9781455586691",
     language: "English",
     thirdParty: {
-      goodreads: {
+      goodreads: {z
         rating: 4.19,
         ratingsCount: 144584,
         reviewsCount: 11598,
