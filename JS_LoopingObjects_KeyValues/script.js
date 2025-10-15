@@ -302,4 +302,13 @@ for (const keys of Object.keys(books[0].thirdParty.goodreads)) {
 }
 console.log(entries);
 
-// 1.1
+// 1.1 Use the for-of loop together with the Object.values() method
+// and Array's entries() method to loop over thirdParty.goodreads property
+// of the first book from the books array.Push each value to the
+// appropriate inner array in the entries array
+// (use index from entries()).
+for (const [index, value] of Object.values(
+  books[0].thirdParty.goodreads
+).entries()) {
+  entries[index].push(value);
+}
