@@ -1,69 +1,69 @@
 "use strict";
 
-const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+// const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
-const openingHours = {
-  [weekdays[3]]: {
-    open: 12,
-    close: 23,
-  },
-  [weekdays[4]]: {
-    open: 11,
-    close: 23,
-  },
-  [weekdays[5]]: {
-    open: 0,
-    close: 24,
-  },
-};
+// const openingHours = {
+//   [weekdays[3]]: {
+//     open: 12,
+//     close: 23,
+//   },
+//   [weekdays[4]]: {
+//     open: 11,
+//     close: 23,
+//   },
+//   [weekdays[5]]: {
+//     open: 0,
+//     close: 24,
+//   },
+// };
 
-const restaurant = {
-  name: "Classico Italiano",
-  location: "Via Angelo Tavanti 23, Firenze, Italy",
-  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
-  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
-  mainMenu: ["Pizza", "Pasta", "Risotto"],
+// const restaurant = {
+//   name: "Classico Italiano",
+//   location: "Via Angelo Tavanti 23, Firenze, Italy",
+//   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+//   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+//   mainMenu: ["Pizza", "Pasta", "Risotto"],
 
-  // ES6 enhanced object literals
-  openingHours,
+// ES6 enhanced object literals
+// openingHours,
 
-  // WITHOUT ENHANCED OBJECT LITERALS
-  // openingHours:openingHours,
+// WITHOUT ENHANCED OBJECT LITERALS
+// openingHours:openingHours,
 
-  orderPasta(ing1, ing2, ing3) {
-    console.log(`Here is your delicious pasta with ${ing1},${ing2},${ing3}`);
-  },
+//   orderPasta(ing1, ing2, ing3) {
+//     console.log(`Here is your delicious pasta with ${ing1},${ing2},${ing3}`);
+//   },
 
-  orderPizza(mainIgredient, ...otherIngredients) {
-    console.log(
-      `The main ingredient of your pizza is ${mainIgredient} and the extra ingredients are ${otherIngredients}`
-    );
-    console.log(otherIngredients);
-  },
-};
+//   orderPizza(mainIgredient, ...otherIngredients) {
+//     console.log(
+//       `The main ingredient of your pizza is ${mainIgredient} and the extra ingredients are ${otherIngredients}`
+//     );
+//     console.log(otherIngredients);
+//   },
+// };
 
-const properties = Object.keys(openingHours);
-console.log(properties);
+// const properties = Object.keys(openingHours);
+// console.log(properties);
 
-let openStr = `We are open on ${properties.length} days: `;
+// let openStr = `We are open on ${properties.length} days: `;
 
 // LOOPING over properties names [ also named 'keys']
-for (const day of Object.keys(openingHours)) {
-  openStr += `${day}, `;
-}
-console.log(openStr);
+// for (const day of Object.keys(openingHours)) {
+//   openStr += `${day}, `;
+// }
+// console.log(openStr);
 
 // PROPERTY VALUES
-const values = Object.values(openingHours);
-console.log(values);
+// const values = Object.values(openingHours);
+// console.log(values);
 
 // Entire object
-const entries = Object.entries(openingHours);
+// const entries = Object.entries(openingHours);
 // console.log(entries);
 
-for (const [key, { open, close }] of entries) {
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
-}
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
 
 // PRACTICE MORE
 const books = [
@@ -296,3 +296,10 @@ const books = [
 // thirdParty.goodreads property (array) of the first book object from
 // the books array. For each key, push a new array that contains that
 // key to the entries array.
+const entries = [];
+for (const keys of Object.keys(books[0].thirdParty.goodreads)) {
+  entries.push([keys]);
+}
+console.log(entries);
+
+// 1.1
